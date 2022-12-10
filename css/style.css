@@ -1,0 +1,225 @@
+@font-face {
+  font-family: "Batman";
+  src: url(../fonts/batmfa__.ttf);
+}
+
+@font-face {
+  font-family: "Neue";
+  src: url(../fonts/NeueMontreal-Regular.otf);
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #112337;
+}
+
+/*----------BARRE DE NAVIGATION---------*/
+header {
+  background: #112337;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.5em;
+}
+
+nav {
+  height: 80px;
+  line-height: 80px;
+  background-color: #112337;
+  font-family: "Batman", Arial, Helvetica, sans-serif;
+  display: flex;
+  align-items: center;
+  border-bottom: 3px solid #1dd8ec;
+  position: sticky;
+  top: 0px;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  flex: 1;
+  height: 100%;
+}
+
+li {
+  align-self: center;
+  padding: 0 25px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  padding: 26.75px 0;
+}
+
+li:hover {
+  background: #1dd8ec;
+  transition: 0.7s;
+}
+
+li:active {
+  transform: scale(1.02);
+}
+
+li:hover a {
+  color: #112337;
+  transition: 0.7s;
+}
+
+li:nth-child(3):hover {
+  background: none;
+}
+
+img#logo {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  top: 40px;
+  transition: transform 0.7s cubic-bezier(0.23, 1.83, 0.42, 1.19);
+}
+
+img#logo:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+#header-img {
+  background: url(../img/headerimg.webp) no-repeat center;
+  height: 80vh;
+  width: 100%;
+}
+
+/*-------------MAIN----------------*/
+
+main {
+  color: white;
+  font-family: "Neue";
+  font-size: 1em;
+}
+
+main h1 {
+  font-family: "Batman";
+  font-size: 3em;
+  margin: 25px 40px;
+  padding: 0 40px;
+  border-left: 3px solid #1dd8ec;
+}
+
+#presentation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin: 25px 0;
+}
+
+#presentation img {
+  height: 250px;
+  border-radius: 25px;
+}
+
+#presentation p {
+  text-align: justify;
+  width: 40%;
+  border-left: 5px solid #1dd8ec;
+  padding-left: 40px;
+}
+
+/*-------------FOOTER--------------*/
+footer {
+  font-family: "Neue", Arial, Helvetica, sans-serif;
+  color: white;
+  background-color: #112337;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: center;
+  border-top: 3px solid #1dd8ec;
+}
+
+h3 {
+  font-size: 1.7em;
+}
+
+#contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 33%;
+}
+
+#contact .form {
+  margin: 10px 0;
+}
+
+#contact .form-ux {
+  color: white;
+  background: #112337;
+  border: 2px solid #1dd8ec;
+}
+
+.form-ux::placeholder {
+  color: rgb(197, 194, 194);
+}
+
+textarea {
+  resize: none;
+}
+
+#contact #button {
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  background: #112337;
+  border: 2px solid #1dd8ec;
+  padding: 5px;
+  cursor: pointer;
+}
+
+#contact #button:hover {
+  background: #1dd8ec;
+  color: #112337;
+  transition: 0.7s;
+}
+
+#information {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#information h3 {
+  margin-bottom: 20px;
+}
+
+#information p {
+  margin: 7px 0;
+}
+
+#reseaux {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 33%;
+}
+
+#reseaux img {
+  width: 65px;
+  height: 65px;
+  cursor: pointer;
+}
+
+#reseaux div {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin: 25px 0;
+}

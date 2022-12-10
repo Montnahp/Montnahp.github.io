@@ -1,0 +1,125 @@
+img#logo {
+  top: 55px !important;
+}
+
+h1 {
+  font-size: 3em !important;
+  text-align: center;
+  border-left: none !important;
+  margin: 100px 0 !important;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(200px, 1fr));
+
+  grid-gap: 30px;
+  margin: 50px 20px;
+  height: 600px;
+}
+
+.card-wrapper {
+  position: relative;
+  max-height: 350px;
+  perspective: 2000px; /* Rajoute l'axe Z (donne une profondeur aux cartes (enfants)) */
+  perspective-origin: top;
+}
+
+.card-wrapper:hover .card {
+  transform: rotateY(180deg); /* Retourne la carte au hover */
+}
+
+.place1 {
+  top: 100px;
+}
+
+.place2 {
+  top: 200px;
+}
+
+.card {
+  position: relative;
+  height: 100%;
+  transform-style: preserve-3d; /* Garde la 3D de l'élément */
+  transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1); /* Animation de la carte qui se retourne */
+  color: #112337;
+  font-weight: bold;
+}
+
+.front,
+.back {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden; /* Cache le dos de la carte */
+}
+
+.front {
+  background: #1dd8ec;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-wrapper p {
+  font-size: 1.7em;
+  letter-spacing: 5px;
+}
+
+img {
+  height: 100%;
+  overflow: hidden;
+}
+
+.back {
+  background: #1dd8ec;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#main-champion {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+#main-champion img {
+  max-height: 75px;
+  max-width: 75px;
+  border-radius: 50%;
+}
+
+#main-champion .overlay {
+  position: relative;
+  bottom: 80px;
+  opacity: 0;
+  height: 75px;
+  width: 75px;
+  border-radius: 50%;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+#main-champion .overlay:hover {
+  opacity: 0.7;
+  transition: 0.5s;
+}
+
+.card-container2 {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+  
+    grid-gap: 30px;
+    margin: 50px 20px;
+    height: 600px;
+  }
