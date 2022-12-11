@@ -80,7 +80,7 @@ img#logo {
   width: 100px;
   height: 100px;
   position: relative;
-  top: 40px;
+  top: 55px;
   transition: transform 0.7s cubic-bezier(0.23, 1.83, 0.42, 1.19);
 }
 
@@ -93,6 +93,45 @@ img#logo:hover {
   background: url(../img/headerimg.webp) no-repeat center;
   height: 80vh;
   width: 100%;
+}
+
+/* Burger Menu */
+nav #burger {
+  display: none;
+  height: min-content;
+  margin: 18px -10px 0 0;
+  cursor: pointer;
+}
+
+nav #burger .bar {
+  width: 40px;
+  height: 5px;
+  margin-bottom: 10px;
+  background: white;
+  transition: 0.7s;
+}
+
+header input {
+  display: none;
+}
+
+input:checked ~ nav ul {
+  transform: translateY(0);
+}
+
+input:checked ~ nav #burger .bar:nth-child(1) {
+  position: absolute;
+  transform: rotate(45deg);
+  transition: 0.7s;
+}
+
+input:checked ~ nav #burger .bar:nth-child(2) {
+  display: none;
+}
+
+input:checked ~ nav #burger .bar:nth-child(3) {
+  transform: rotate(-45deg);
+  transition: 0.7s;
 }
 
 /*-------------MAIN----------------*/
@@ -111,7 +150,7 @@ main h1 {
   border-left: 3px solid #1dd8ec;
 }
 
-#presentation {
+.presentation {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -119,12 +158,12 @@ main h1 {
   margin: 25px 0;
 }
 
-#presentation img {
+.presentation img {
   height: 250px;
   border-radius: 25px;
 }
 
-#presentation p {
+.presentation p {
   text-align: justify;
   width: 40%;
   border-left: 5px solid #1dd8ec;
@@ -152,7 +191,7 @@ h3 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 33%;
+  width: 100%;
 }
 
 #contact .form {
@@ -194,6 +233,7 @@ textarea {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 
 #information h3 {
@@ -208,7 +248,7 @@ textarea {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 33%;
+  width: 100%;
 }
 
 #reseaux img {
@@ -220,6 +260,89 @@ textarea {
 #reseaux div {
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   margin: 25px 0;
+}
+
+@media screen and (max-width: 1140px) {
+  /* Barre de navigation */
+  nav {
+    flex-direction: column;
+    z-index: 1;
+  }
+
+  nav ul {
+    flex-direction: column;
+    position: relative;
+    top: 60px;
+    background: #112337;
+    width: 100%;
+    height: 200px;
+    transform: translateY(-300%);
+    transition: 0.7s;
+    margin-bottom: -1px;
+  }
+
+  nav #border {
+    border-bottom: 3px solid #1dd8ec;
+    position: relative;
+  }
+
+  nav ul li {
+    height: 400px;
+    width: 100%;
+    text-align: center;
+  }
+
+  nav div {
+    order: -1;
+    position: absolute;
+    left: 50px;
+    bottom: -25px;
+  }
+
+  nav #burger {
+    display: flex !important;
+    flex-direction: column;
+    position: absolute;
+    right: 75px;
+  }
+
+  input:checked ~ nav div img {
+    display: none;
+  }
+
+  /* Main */
+  main h1 {
+    font-size: 1.5em;
+  }
+
+  .presentation {
+    flex-direction: column;
+  }
+
+  .presentation img {
+    width: 85%;
+    height: auto;
+  }
+
+  .presentation p {
+    align-items: center;
+    width: 90%;
+    margin-top: 15px;
+  }
+
+  .presentation #ordre {
+    order: -1;
+  }
+
+  /* Footer */
+  footer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  footer div {
+    margin: 30px 0;
+  }
 }

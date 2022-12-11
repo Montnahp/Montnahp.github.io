@@ -2,25 +2,24 @@ img#logo {
   top: 55px !important;
 }
 
-h1 {
-  font-size: 3em !important;
+#equipe h1 {
+  font-size: 3em;
   text-align: center;
-  border-left: none !important;
-  margin: 100px 0 !important;
+  border-left: none;
+  margin: 100px 0;
 }
 
 .card-container {
   display: grid;
-  grid-template-columns: repeat(5, minmax(200px, 1fr));
-
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-gap: 30px;
-  margin: 50px 20px;
-  height: 600px;
+  margin: 50px 20px 250px 20px;
 }
 
 .card-wrapper {
   position: relative;
   max-height: 350px;
+  min-height: 350px;
   perspective: 2000px; /* Rajoute l'axe Z (donne une profondeur aux cartes (enfants)) */
   perspective-origin: top;
 }
@@ -116,10 +115,22 @@ img {
 }
 
 .card-container2 {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(200px, 1fr));
-  
-    grid-gap: 30px;
-    margin: 50px 20px;
-    height: 600px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 30px;
+  margin: 50px 20px 250px 20px;
+}
+
+@media screen and (max-width: 1140px) {
+  #equipe h1 {
+    font-size: 1.5em;
   }
+
+  .place1 {
+    top: 0;
+  }
+
+  .place2 {
+    top: 0;
+  }
+}
