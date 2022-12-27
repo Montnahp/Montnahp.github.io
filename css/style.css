@@ -37,7 +37,7 @@ nav {
   top: 0px;
 }
 
-ul {
+header ul {
   list-style: none;
   display: flex;
   flex-direction: row;
@@ -47,7 +47,7 @@ ul {
   height: 100%;
 }
 
-li {
+header li {
   align-self: center;
   padding: 0 25px;
 }
@@ -264,7 +264,243 @@ textarea {
   margin: 25px 0;
 }
 
-@media screen and (max-width: 1140px) {
+/*------------PAGE D'EQUIPE---------*/
+
+#equipe h1 {
+  font-size: 3em;
+  text-align: center;
+  border-left: none;
+  margin: 100px 0;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 30px;
+  margin: 50px 20px 250px 20px;
+}
+
+.card-wrapper {
+  position: relative;
+  max-height: 350px;
+  min-height: 350px;
+  perspective: 2000px; /* Rajoute l'axe Z (donne une profondeur aux cartes (enfants)) */
+  perspective-origin: top;
+}
+
+.card-wrapper:hover .card {
+  transform: rotateY(180deg); /* Retourne la carte au hover */
+}
+
+.place1 {
+  top: 100px;
+}
+
+.place2 {
+  top: 200px;
+}
+
+.card {
+  position: relative;
+  height: 100%;
+  transform-style: preserve-3d; /* Garde la 3D de l'élément */
+  transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1); /* Animation de la carte qui se retourne */
+  color: #112337;
+  font-weight: bold;
+}
+
+.front,
+.back {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden; /* Cache le dos de la carte */
+}
+
+.front {
+  background: #1dd8ec;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-wrapper p {
+  font-size: 1.7em;
+  letter-spacing: 5px;
+}
+
+img {
+  height: 100%;
+  overflow: hidden;
+}
+
+.back {
+  background: #1dd8ec;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#main-champion {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+#main-champion img {
+  max-height: 75px;
+  max-width: 75px;
+  border-radius: 50%;
+}
+
+#main-champion .overlay {
+  position: relative;
+  bottom: 80px;
+  opacity: 0;
+  height: 75px;
+  width: 75px;
+  border-radius: 50%;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+#main-champion .overlay:hover {
+  opacity: 0.7;
+  transition: 0.5s;
+}
+
+.card-container2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 30px;
+  margin: 50px 20px 250px 20px;
+}
+
+/*---------PAGE MERCH------------*/
+.card-container-merch{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.card-merch{
+  background: #1dd8ec;
+  max-width: 700px;
+  margin: 25px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-merch:hover{
+  transition: 300ms;
+  transform: scale(1.05);
+}
+
+.slides {
+  display: flex;
+  align-items: center;
+}
+
+.card-merch .slide img{
+  max-width: 350px;
+  margin: 0 auto;
+}
+
+
+.slide:nth-child(2){
+  position: absolute;
+  opacity: 0;
+}
+
+.card-merch:hover .slide:nth-child(2){
+  opacity: 1;
+}
+
+.info-merch {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 90%;
+}
+
+.card-merch p{
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+
+/*----------PAGE PALMARES-------------*/
+.palmares-container{
+  background: #1dd8ec;
+  margin: 50px 20%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.palmares-container h2{
+  font-size: 2em;
+  text-align: center;
+  border-bottom: 3px solid #112337;
+}
+
+.palmares-container .palmares-img-list{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.palmares-container .palmares-list{
+  list-style-position: inside;
+  list-style-image: url("../img/trophy.png");
+
+}
+
+.palmares-list li{
+  margin: 5px 10px;
+}
+
+.palmares-img-list img{
+  width: 50%;
+  border-left: 3px solid #112337;
+}
+
+/*--------------Page Information-------------*/
+#my-info{
+  margin: 0 38%;
+}
+
+#information-page p{
+  font-size: 2em;
+}
+
+#maquette-img{
+  display: flex;
+  flex-direction: column;
+}
+
+#maquette-img a{
+  display: flex;
+  justify-content: center;
+}
+
+#information-page img{
+  width: 50%;
+}
+
+@media screen and (max-width: 1160px) {
   /* Barre de navigation */
   nav {
     flex-direction: column;
@@ -315,6 +551,7 @@ textarea {
   /* Main */
   main h1 {
     font-size: 1.5em;
+    margin-top: 40px;
   }
 
   .presentation {
@@ -344,5 +581,37 @@ textarea {
 
   footer div {
     margin: 30px 0;
+  }
+
+  /*------------PAGE D'EQUIPE---------*/
+  #equipe h1 {
+    font-size: 1.5em;
+  }
+
+  .place1 {
+    top: 0;
+  }
+
+  .place2 {
+    top: 0;
+  }
+
+  /*-------------PAGE MERCH------------*/
+  .card-container-merch{
+    flex-direction: column;
+  }
+
+  #merch #logo{
+    top: 55px;
+  }
+
+  /*------------PAGE PALMARES-----------*/
+  .palmares-container .palmares-img-list{
+    flex-direction: column;
+  }
+
+  .palmares-container .palmares-img-list img{
+    width: 100%;
+    border-top: 3px solid #112337;
   }
 }

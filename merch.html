@@ -8,20 +8,64 @@
     <title>KarmineCorp | Merch</title>
 </head>
 <body>
-    <header>
+    <header class="merch">
+        <input type="checkbox" id="toggle">
         <nav>
             <ul>
                 <li><a href="equipe.html">Équipe</a></li>
-                <li><a href="#">Merch</a></li>
+                <li><a href="merch.html">Merch</a></li>
             </ul>
-            <img src="img/logo.webp" alt="Logo équipe" id="logo">
-            <ul>
-                <li><a href="#">Palmarès</a></li>
-                <li><a href="#">Information</a></li>
+            <div><a href="index.html"><img src="img/logo.webp" alt="Logo équipe" id="logo"></a></div>
+            <ul id="border">
+                <li><a href="palmares.html">Palmarès</a></li>
+                <li><a href="information.html">Information</a></li>
             </ul>
+            <label id="burger" for="toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+              </label>
         </nav>
     </header>
 
+    <main id="merch">
+        <h1>Merchandising</h1>
+        <div class="card-container-merch">
+            <div class="card-merch">
+                <div class="slides">
+                    <div class="slide"><img src="img/maillot/maillot_champagne.webp" alt="maillot champagne"></div>
+                    <div class="slide"><img src="img/maillot/maillot_champagne_dos.png" alt="maillot champagne dos"></div>
+                </div>
+                <div class="info-merch">
+                    <p>Édition Champagne</p>
+                    <p>70,00€</p>
+                </div>
+            </div>
+
+            <div class="card-merch">
+                <div class="slides">
+                    <div class="slide"><img src="img/maillot/maillot_gris.webp" alt="maillot gris"></div>
+                    <div class="slide"><img src="img/maillot/maillot_gris_dos.webp" alt="maillot gris dos"></div>
+                </div>
+                <div class="info-merch">
+                    <p>Édition Gris</p>
+                    <p>70,00€</p>
+                </div>
+            </div>
+
+            <div class="card-merch">
+                <div class="slides">
+                    <div class="slide"><img src="img/maillot/maillot_noir.webp" alt="maillot noir"></div>
+                    <div class="slide"><img src="img/maillot/maillot_noir_dos.webp" alt="maillot noir dos"></div>
+                </div>
+                <div class="info-merch">
+                    <p>Édition Noir</p>
+                    <p>70,00€</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
 
     <footer>
         <div id="contact">
